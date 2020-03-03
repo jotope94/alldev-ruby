@@ -1,0 +1,41 @@
+puts "cadastre um produto"
+
+produtos=2
+bd_id=[]
+bd_nome=[]
+bd_marca=[]
+bd_preco=[]
+escolha_marketplace=[]
+
+for qtd in 1..produtos
+    bd_id[qtd]=qtd
+    puts "nome"
+    bd_nome[qtd]=gets.strip
+    puts "marca"
+    bd_marca[qtd]=gets.strip
+     puts "preco"
+    bd_preco[qtd]=gets.strip
+end
+puts "catalogo cadastrado"
+for qtd in 1..produtos
+ puts bd_id[qtd].to_s+" "+bd_nome[qtd]+" "+bd_marca[qtd]+" "+bd_preco[qtd]
+ puts
+end
+
+puts "digite os numeros que gostaria de enviar para o marketplace"
+puts "digite 0 para sair"
+for contador in 1..produtos
+  numero=gets.strip
+  if(numero==0)
+    break
+  else
+    escolha_marketplace[contador]=numero
+  end
+ 
+end
+puts "produtos enviados para o marketplace"
+
+for qtd in 1..escolha_marketplace.length
+id=escolha_marketplace[qtd].to_i
+puts bd_id[id].to_s+" "+bd_nome[id]+" "+bd_marca[id]+" "+bd_preco[id]
+end
